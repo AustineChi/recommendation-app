@@ -1,8 +1,14 @@
 import React from "react";
-import { View, Text, FlatList, ActivityIndicator } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  ActivityIndicator,
+  ScrollView,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import JobCard from "../../components/JobCard/JobCard";
-import useJobs from "../../Hooks/useJobs";
+import useJobs from "../../hooks/useJobs";
 import styles from "./styles";
 import { StackNavigationProp, StackScreenProps } from "@react-navigation/stack";
 import { RootStackParamList } from "../../models/navigationModel";
@@ -30,20 +36,22 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Text style={styles.headerText}>Recommended Jobs</Text>
       <FlatList
         data={jobs}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item, index) =>
+          item.unique ? item.unique.toString() : index.toString()
+        }
         renderItem={({ item }) => (
           <JobCard
             title={item.title}
             companyName={item.companyName}
-            onPress={() => handlePressJob(item.id)}
+            onPress={() => handlePressJob(item.unique)}
           />
         )}
       />
-    </View>
+    </ScrollView>
   );
 };
 

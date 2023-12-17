@@ -1,7 +1,7 @@
 // ProfileScreen.tsx
 import React, { useEffect } from 'react';
 import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
-import useUser from '../../Hooks/useUser';
+import useUser from '../../hooks/useUser';
 import styles from './styles';
 
 const ProfileScreen: React.FC = () => {

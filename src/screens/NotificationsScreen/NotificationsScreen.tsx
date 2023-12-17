@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, ScrollView } from "react-native";
 import styles from "./styles";
 
 interface Notification {
@@ -19,7 +19,7 @@ const NotificationsScreen: React.FC = () => {
   ];
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <FlatList
         data={notifications}
         keyExtractor={(item) => item.id}
@@ -30,7 +30,7 @@ const NotificationsScreen: React.FC = () => {
           </View>
         )}
       />
-    </View>
+    </ScrollView>
   );
 };
 

@@ -2,7 +2,7 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react';
 import { View, Text, ScrollView, ActivityIndicator, Linking } from 'react-native';
-import useJob from '../../Hooks/useJob';
+import useJob from '../../hooks/useJob';
 import { RootStackParamList } from '../../models/navigationModel';
 import styles from './styles';
 

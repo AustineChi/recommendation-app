@@ -23,7 +23,7 @@ const tabs: TabItem[] = [
         icon: "home",
     },
     {
-        name: "SavedJobs",
+        name: "Saved Jobs",
         component: SavedJobsScreen,
         icon: "bookmark-outline",
     },

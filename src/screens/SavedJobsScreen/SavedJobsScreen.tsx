@@ -1,6 +1,6 @@
 // SavedJobsScreen.tsx
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { ScrollView, Text, FlatList } from "react-native";
 import JobCard from "../../components/JobCard/JobCard";
 import { Job } from "../../models/jobModel";
 import styles from "./styles";
@@ -17,7 +17,7 @@ const SavedJobsScreen: React.FC = () => {
   ];
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Text style={styles.headerText}>Saved Jobs</Text>
       <FlatList
         data={savedJobs}
@@ -30,7 +30,7 @@ const SavedJobsScreen: React.FC = () => {
           />
         )}
       />
-    </View>
+    </ScrollView>
   );
 };
 

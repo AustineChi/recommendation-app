@@ -8,7 +8,7 @@ import {
   Text,
 } from "react-native";
 import JobCard from "../../components/JobCard/JobCard";
-import useJobs from "../../Hooks/useJobs";
+import useJobs from "../../hooks/useJobs";
 import styles from "./styles";
 
 const SearchScreen: React.FC = () => {

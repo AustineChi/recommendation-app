@@ -1,9 +1,8 @@
-import { useContext } from 'react';
-import { UserContext } from '../context/UserContext';
-import authApi from '../Services/api/authApi';
+import { useUser as useUserContext }  from '../context/UserContext';
+import authApi from '../services/api/authApi';
 
 const useUser = () => {
-    const { userProfile, setUserProfile } = useContext(UserContext);
+    const { userProfile, setUserProfile } = useUserContext();
 
     const fetchUserProfile = async (userId: string) => {
         try {
